@@ -7,12 +7,8 @@ import { getCurrentUser, logout } from '@/lib/auth';
 
 const Navbar = () => {
   const [user, setUser] = useState<User | null>(null);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme-mode') === 'dark' ? 'dark' : 'light';
-    }
-    return 'light';
-  });
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -24,9 +20,17 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme-mode', theme);
-  }, [theme]);
+    setMounted(true);
+    const stored = localStorage.getItem('theme-mode');
+    if (stored === 'dark') setTheme('dark');
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme-mode', theme);
+    }
+  }, [theme, mounted]);
 
   const handleLogout = () => {
     logout();
@@ -37,9 +41,9 @@ const Navbar = () => {
     <>
       <nav
         style={{
-          background: theme === 'dark'
-            ? 'rgba(15,15,15,0.92)'
-            : 'rgba(255,255,255,0.92)',
+          background: !mounted || theme === 'light'
+            ? 'rgba(255,255,255,0.92)'
+            : 'rgba(15,15,15,0.92)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
           borderBottom: '1px solid rgba(255,122,0,0.15)',
@@ -86,11 +90,11 @@ const Navbar = () => {
               className="flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-full border transition-all duration-200"
               style={{
                 borderColor: 'rgba(255,122,0,0.35)',
-                background: theme === 'dark' ? 'rgba(255,122,0,0.12)' : 'rgba(255,122,0,0.06)',
+                background: !mounted || theme === 'light' ? 'rgba(255,122,0,0.06)' : 'rgba(255,122,0,0.12)',
                 color: 'var(--sw-saffron)',
               }}
             >
-              {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+              {(!mounted || theme === 'light') ? '🌙 Dark' : '☀️ Light'}
             </button>
 
             {user ? (
@@ -148,7 +152,10 @@ const Navbar = () => {
         {menuOpen && (
           <div
             className="md:hidden px-4 pb-4 flex flex-col gap-3 border-t"
-            style={{ borderColor: 'rgba(255,122,0,0.15)', background: theme === 'dark' ? 'rgba(20,20,20,0.97)' : 'rgba(255,255,255,0.97)' }}
+            style={{ 
+              borderColor: 'rgba(255,122,0,0.15)', 
+              background: (!mounted || theme === 'light') ? 'rgba(255,255,255,0.97)' : 'rgba(20,20,20,0.97)' 
+            }}
           >
             <Link href="/" className="font-semibold py-2 text-sm" style={{ color: 'var(--foreground)' }} onClick={() => setMenuOpen(false)}>Home</Link>
             <Link href="/planner" className="font-semibold py-2 text-sm" style={{ color: 'var(--foreground)' }} onClick={() => setMenuOpen(false)}>Trip Planner</Link>
@@ -157,7 +164,7 @@ const Navbar = () => {
               className="text-left font-semibold py-2 text-sm"
               style={{ color: 'var(--sw-saffron)' }}
             >
-              {theme === 'dark' ? '☀️ Switch to Light Mode' : '🌙 Switch to Dark Mode'}
+              {(!mounted || theme === 'light') ? '🌙 Switch to Dark Mode' : '☀️ Switch to Light Mode'}
             </button>
             {user ? (
               <>

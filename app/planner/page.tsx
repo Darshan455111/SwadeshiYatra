@@ -116,19 +116,19 @@ function PlaceImage({ placeName, city, type, className }: { placeName: string; c
 // ─── Travel Tip Loader ─────────────────────────────────────────────────────
 
 const TRAVEL_TIPS = [
-  '🇮🇳 India has 40+ UNESCO World Heritage Sites.',
-  '🚂 Indian Railways is one of the world\'s largest rail networks.',
-  '🛕 Varanasi is among the world\'s oldest continuously inhabited cities.',
-  '🏖️ India has over 7,500 km of coastline.',
-  '🎨 India has 22 officially recognised languages.',
-  '🌿 India is the world\'s largest producer of spices.',
-  '🕌 The Taj Mahal took 22 years and 20,000 workers to build.',
-  '🎭 Bollywood produces more films per year than Hollywood.',
-  '🌅 India has 5 different time zone regions across its territory.',
-  '🦅 India is home to the Bengal Tiger, Indian Elephant, and Snow Leopard.',
+  '🇮🇳 India has 42 UNESCO World Heritage Sites, the 6th most in the world.',
+  '🛕 The Kashi Vishwanath temple in Varanasi is one of the oldest living cities.',
+  '🌿 India produces over 70% of the world\'s spices.',
+  '🏔️ The Himalayas rank as the youngest and highest mountain range in the world.',
+  '🐅 India is home to 75% of the world\'s wild tiger population.',
+  '🚂 The Chhatrapati Shivaji Maharaj Terminus in Mumbai is a UNESCO-recognized railway station.',
+  '🌊 The Sundarbans in West Bengal form the largest mangrove forest in the world.',
+  '🏜️ The Rann of Kutch is the world\'s largest seasonal salt marsh desert.',
+  '🌁 Meghalaya holds the Guinness World Record for being the wettest place on Earth.',
+  '🚗 The highest motorable road in the world is the Umling La pass in Ladakh at 19,024 ft.',
 ];
 
-function TravelTipLoader({ message }: { message: string }) {
+function TravelTipLoader({ message, small = false }: { message: string, small?: boolean }) {
   const [index, setIndex] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
 
@@ -139,32 +139,37 @@ function TravelTipLoader({ message }: { message: string }) {
         setIndex((i) => (i + 1) % TRAVEL_TIPS.length);
         setVisible(true);
       }, 300);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="rounded-2xl p-10 shadow-sm border text-center" style={{ background: 'var(--card-bg)', borderColor: 'var(--card-border)' }}>
-      <div className="text-6xl mb-6 flex justify-center w-full" style={{ animation: 'floaty 3s ease-in-out infinite' }}>
-        <div className="relative">
-          <span className="absolute -inset-4 bg-orange-200 rounded-full blur-xl opacity-50 animate-pulse"></span>
-          <span className="relative z-10">🚀</span>
+    <div className={`rounded-2xl shadow-sm border text-center relative overflow-hidden ${small ? 'p-6' : 'p-10'}`} style={{ background: 'var(--card-bg)', borderColor: 'var(--card-border)' }}>
+      <div className="absolute top-0 left-0 w-32 h-32 bg-orange-100/50 rounded-full blur-2xl animate-pulse pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-32 h-32 bg-red-100/50 rounded-full blur-2xl animate-pulse pointer-events-none" style={{ animationDelay: '1s' }}></div>
+      <div className={`${small ? 'text-4xl mb-4' : 'text-6xl mb-6'} flex justify-center w-full relative z-10`}>
+        <div className="relative inline-block hover:scale-110 transition-transform duration-500">
+          <span className="absolute inset-0 bg-yellow-200 rounded-full blur-xl opacity-40 animate-pulse"></span>
+          <span className="relative z-10 drop-shadow-md">🌏</span>
+          <span className="absolute -top-2 -right-4 text-2xl animate-bounce">✈️</span>
         </div>
       </div>
-      <p className="text-2xl font-black mb-2 tracking-tight" style={{ color: 'var(--sw-red)' }}>{message}</p>
-      <p className="text-sm mb-8 font-medium" style={{ color: 'var(--muted)' }}>Optimising routes and gathering local insights...</p>
-      <div className="max-w-md mx-auto rounded-2xl p-5 border min-h-[90px] shadow-sm" style={{ background: 'rgba(255,122,0,0.06)', borderColor: 'rgba(255,122,0,0.2)' }}>
-        <p className="text-xs font-black uppercase mb-2 tracking-wider" style={{ color: 'var(--sw-saffron)' }}>Travel Fact</p>
+      <p className={`${small ? 'text-xl' : 'text-2xl'} font-black mb-2 tracking-tight relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-500`}>{message}</p>
+      {!small && <p className="text-sm mb-8 font-medium relative z-10 text-gray-500">Optimising routes and gathering local insights...</p>}
+      
+      <div className={`max-w-md mx-auto rounded-xl p-5 border shadow-sm relative z-10 backdrop-blur-sm bg-white/40 ${small ? 'min-h-[85px]' : 'min-h-[95px]'}`} style={{ borderColor: 'rgba(255,122,0,0.15)' }}>
+        <p className="text-[10px] font-black uppercase mb-1.5 tracking-wider text-orange-600">General Knowledge Fact</p>
         <p
-          className="text-base font-bold transition-all duration-300"
-          style={{ color: 'var(--foreground)', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(5px)' }}
+          className={`font-semibold transition-all duration-300 text-gray-800 ${small ? 'text-sm' : 'text-base'}`}
+          style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(4px)' }}
         >
           {TRAVEL_TIPS[index]}
         </p>
       </div>
-      <div className="flex justify-center gap-2 mt-8">
+      
+      <div className="flex justify-center gap-2 mt-6 relative z-10">
         {[0, 1, 2].map((i) => (
-          <div key={i} className="rounded-full shadow-sm" style={{ width: 8, height: 8, background: i === 0 ? 'var(--sw-saffron)' : i === 1 ? 'white' : 'var(--sw-blue)', animation: `saffronPulse ${1 + i * 0.3}s ease-in-out infinite` }} />
+          <div key={i} className="rounded-full shadow-sm" style={{ width: 8, height: 8, background: i === 0 ? 'var(--sw-saffron)' : i === 1 ? '#e2e8f0' : 'var(--sw-blue)', animation: `pulse 1.5s ease-in-out infinite alternate`, animationDelay: `${i * 0.2}s` }} />
         ))}
       </div>
     </div>
@@ -202,7 +207,7 @@ function useCityAutocomplete() {
       } finally {
         setLoading(false);
       }
-    }, 300);
+    }, 500);
   }, []);
 
   const clear = useCallback(() => {
@@ -633,14 +638,14 @@ function JourneyPlannerMode() {
         const guide = Object.values(guideMap).flat().find((g) => g.id === guideId);
         const entryFee = item.entryFee ?? 300;
         const transportCost = item.transportCost ?? (selectedCities.length > 1 ? 1500 : 500);
-        const guideFee = item.guideFee ?? guide?.pricePerDay ?? 0;
+        const guideFee = guide ? guide.pricePerDay : 0;
         return {
           ...item,
           routeFrom: item.routeFrom ?? 'Previous Stop',
           routeTo: item.routeTo ?? item.city,
-          suggestedGuide: guide ? `${guide.name} — ₹${guide.pricePerDay}/day` : item.suggestedGuide,
+          suggestedGuide: guide ? `${guide.name} — ₹${guide.pricePerDay}/day` : 'Not selected',
           entryFee, transportCost, guideFee,
-          totalCost: item.totalCost ?? entryFee + transportCost + guideFee,
+          totalCost: entryFee + transportCost + guideFee,
           imageUrl: item.imageUrl || '',
           highlights: item.highlights?.length ? item.highlights : [
             `1. Reach ${item.place} via ${item.transport || 'local transport'}.`,
@@ -705,6 +710,12 @@ function JourneyPlannerMode() {
               {citiesLoading ? '⏳ Loading...' : 'Add City'}
             </button>
           </div>
+
+          {citiesLoading && (
+            <div className="py-2">
+              <TravelTipLoader message="Finding real attractions..." small={true} />
+            </div>
+          )}
 
           {/* Quick-pick popular cities */}
           <div className="flex flex-wrap gap-2">
@@ -1050,12 +1061,12 @@ function JourneyPlannerMode() {
                 <div key={idx} className="bg-white border border-orange-200 rounded-2xl overflow-hidden shadow-sm group hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 ease-out">
                   <div className="relative w-full h-48">
                     <PlaceImage placeName={item.place} city={item.city} className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className="absolute bottom-3 left-4 text-white">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-3 left-4 text-white pointer-events-none">
                       <p className="text-xl font-black">{item.place}</p>
                       <p className="text-sm opacity-90">Day {item.day} · {item.time} · {item.city}</p>
                     </div>
-                    <div className="absolute top-3 right-3 bg-red-600 text-white text-sm font-black px-3 py-1 rounded-full">
+                    <div className="absolute top-3 right-3 bg-red-600 text-white text-sm font-black px-3 py-1 rounded-full pointer-events-none">
                       ₹{(item.totalCost ?? 0).toLocaleString('en-IN')}
                     </div>
                   </div>
