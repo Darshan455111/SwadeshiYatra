@@ -5,6 +5,7 @@ import { FeasibilityResult, ItineraryItem, TouristPlace, TripPreferences } from 
 // Primary model — fastest and cheapest with billing enabled
 const MODEL = "gemini-2.5-flash";
 
+
 // ─── JSON Utilities ────────────────────────────────────────────────────────────
 
 /**
