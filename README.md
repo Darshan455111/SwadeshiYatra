@@ -1,8 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SwadeshiYatra 🇮🇳
 
-## Getting Started
+Welcome to **SwadeshiYatra**, a modern web application designed to promote local tourism in India and help travelers discover the beauty of our local heritage.
 
-First, run the development server:
+## 🚀 Features & Walkthrough
+
+Here is a look at the various features of SwadeshiYatra:
+
+### 🏠 Home Page
+The landing page of the application, welcoming users to explore India.
+![Home Page](./Visuals/home%20page.png)
+
+### 🔐 Authentication
+Secure login for users and service providers.
+![Login](./Visuals/login%20.png)
+
+### 👤 User Dashboard
+User profile and preferences.
+![User Info](./Visuals/user%20info%20.png)
+
+### 🏙️ City Planner
+Explore specific cities with an AI-powered travel guide to fetch real attractions, entry fees, and budget tips.
+![City Planner 1](./Visuals/city%20planner%201.png)
+![City Planner 2](./Visuals/city%20planner%202.png)
+
+### 🗺️ Journey / Trip Planner
+Plan detailed itineraries for your trips, optimized with our intelligent planner.
+![Journey Planner](./Visuals/journey%20planner%201%20%20-%20Copy.png)
+![Trip Plan 1](./Visuals/Trip%20plan%201.png)
+![Trip Plan 2](./Visuals/Trip%20plan%202.png)
+![Trip Plan 4](./Visuals/Trip%20plan%204.png)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js (App Router)](https://nextjs.org/)
+- **Styling**: Tailwind CSS
+- **Database**: SQLite
+- **AI Capabilities**: Google Generative AI (`@google/generative-ai`)
+- **Language**: TypeScript
+
+---
+
+## 💻 Getting Started
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+Make sure you have Node.js installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd SwadeshiYatra
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+Start the development server with:
 
 ```bash
 npm run dev
@@ -16,21 +80,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+- `/app`: Contains all the routes and page components.
+- `/public`: Contains static assets like images, icons, and fonts.
+- `/components`: Reusable UI components.
+- `/data`: Static mock data and database configurations.
+- `/lib`: Helper functions and utility modules.
+- `/Visuals`: Screenshots and mockups of the application.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions, issues, and feature requests are welcome!
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
