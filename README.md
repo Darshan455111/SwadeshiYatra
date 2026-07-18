@@ -7,24 +7,24 @@ Welcome to **SwadeshiYatra**, a modern web application designed to promote local
 Here is a look at the various features of SwadeshiYatra:
 
 ### 🏠 Home Page
-The landing page of the application, welcoming users to explore India.
+The vibrant landing page of the application provides an immersive introduction to India's cultural heritage. It immediately welcomes users with stunning visuals, intuitive navigation, and quick access to exploration tools, setting the perfect tone for their travel journey.
 ![Home Page](./Visuals/home%20page.png)
 
 ### 🔐 Authentication
-Secure login for users and service providers.
+A seamless and secure authentication gateway tailored for both regular travelers and service providers. The login experience features a modern, clean interface that ensures quick onboarding while maintaining the highest security standards for user data and platform integrity.
 ![Login](./Visuals/login%20.png)
 
 ### 👤 User Dashboard
-User profile and preferences.
+A personalized user dashboard where travelers can easily manage their profile details, preferences, and saved itineraries. The intuitive layout gives users full control over their account settings while providing a comprehensive overview of their upcoming travel plans and verified status.
 ![User Info](./Visuals/user%20info%20.png)
 
 ### 🏙️ City Planner
-Explore specific cities with an AI-powered travel guide to fetch real attractions, entry fees, and budget tips.
+Dive deep into specific Indian cities using our intelligent AI-powered travel guide. This feature instantly curates comprehensive city profiles including top historical attractions, visiting hours, entry fees, and practical local tips, allowing users to make highly informed decisions before they travel.
 ![City Planner 1](./Visuals/city%20planner%201.png)
 ![City Planner 2](./Visuals/city%20planner%202.png)
 
 ### 🗺️ Journey / Trip Planner
-Plan detailed itineraries for your trips, optimized with our intelligent planner.
+Take the stress out of vacation planning with our smart, step-by-step itinerary builder. This dynamic tool optimizes travel routes and schedules to generate a balanced, personalized journey plan, complete with cost estimates and curated local experiences tailored to the user's specific travel dates and preferences.
 ![Journey Planner](./Visuals/journey%20planner%201%20%20-%20Copy.png)
 ![Trip Plan 1](./Visuals/Trip%20plan%201.png)
 ![Trip Plan 2](./Visuals/Trip%20plan%202.png)
