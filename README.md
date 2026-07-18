@@ -20,12 +20,12 @@ A personalized user dashboard where travelers can easily manage their profile de
 
 ### 🛡️ Admin Panel
 A powerful, centralized administrative dashboard designed for seamless platform management and oversight. It provides real-time statistics on total users, tourists, service providers, and pending verifications, allowing administrators to efficiently review applications and monitor overall platform health.
-![Admin Panel](./Visuals/Admin%20panal%201.png)
+![Admin Panel](./Visuals/admin_panel_1.png)
 
 ### 🎫 Guide Dashboard
 A dedicated portal for local guides to manage their professional profiles, daily fees, and verification documents. It features clear status indicators (like Verified Partner or Rejected) and allows guides to securely upload ID proofs and licenses to maintain their active service provider status on the platform.
-![Guide Dashboard Rejected](./Visuals/guide%20panal.png)
-![Guide Dashboard Verified](./Visuals/Guide%20panal%20(Approved).png)
+![Guide Dashboard Rejected](./Visuals/guide_panel.png)
+![Guide Dashboard Verified](./Visuals/guide_panel_approved.png)
 
 ### 🏙️ City Planner & Attractions
 Dive deep into specific Indian cities using our intelligent AI-powered travel guide. This feature instantly curates comprehensive city profiles including top historical attractions, visiting hours, entry fees, and practical local tips, allowing users to make highly informed decisions before they travel.
