@@ -4,7 +4,7 @@ Welcome to **SwadeshiYatra**, a modern web application designed to promote local
 
 ## 🚀 Features & Walkthrough
 
-Here is a look at the various features of SwadeshiYatra:
+Here is a comprehensive look at the various features of SwadeshiYatra:
 
 ### 🏠 Home Page
 The vibrant landing page of the application provides an immersive introduction to India's cultural heritage. It immediately welcomes users with stunning visuals, intuitive navigation, and quick access to exploration tools, setting the perfect tone for their travel journey.
@@ -18,10 +18,21 @@ A seamless and secure authentication gateway tailored for both regular travelers
 A personalized user dashboard where travelers can easily manage their profile details, preferences, and saved itineraries. The intuitive layout gives users full control over their account settings while providing a comprehensive overview of their upcoming travel plans and verified status.
 ![User Info](./Visuals/user%20info%20.png)
 
-### 🏙️ City Planner
+### 🛡️ Admin Panel
+A powerful, centralized administrative dashboard designed for seamless platform management and oversight. It provides real-time statistics on total users, tourists, service providers, and pending verifications, allowing administrators to efficiently review applications and monitor overall platform health.
+![Admin Panel](./Visuals/admin_panel.png)
+
+### 🎫 Guide Dashboard
+A dedicated portal for local guides to manage their professional profiles, daily fees, and verification documents. It features clear status indicators (like Verified Partner or Rejected) and allows guides to securely upload ID proofs and licenses to maintain their active service provider status on the platform.
+![Guide Dashboard Rejected](./Visuals/guide_rejected.png)
+![Guide Dashboard Verified](./Visuals/guide_verified.png)
+
+### 🏙️ City Planner & Attractions
 Dive deep into specific Indian cities using our intelligent AI-powered travel guide. This feature instantly curates comprehensive city profiles including top historical attractions, visiting hours, entry fees, and practical local tips, allowing users to make highly informed decisions before they travel.
+![SwadeshiYatra Planner](./Visuals/planner_home.png)
 ![City Planner 1](./Visuals/city%20planner%201.png)
 ![City Planner 2](./Visuals/city%20planner%202.png)
+![Top Attractions](./Visuals/top_attractions.png)
 
 ### 🗺️ Journey / Trip Planner
 Take the stress out of vacation planning with our smart, step-by-step itinerary builder. This dynamic tool optimizes travel routes and schedules to generate a balanced, personalized journey plan, complete with cost estimates and curated local experiences tailored to the user's specific travel dates and preferences.
