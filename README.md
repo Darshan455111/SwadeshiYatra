@@ -4,7 +4,7 @@ Welcome to **SwadeshiYatra**, a modern web application designed to promote local
 
 ## 🚀 Features & Walkthrough
 
-Here is a comprehensive look at the various features of SwadeshiYatra:
+Here is a comprehensive look at the various features of  my project SwadeshiYatra:
 
 ### 🏠 Home Page
 The vibrant landing page of the application provides an immersive introduction to India's cultural heritage. It immediately welcomes users with stunning visuals, intuitive navigation, and quick access to exploration tools, setting the perfect tone for their travel journey.
